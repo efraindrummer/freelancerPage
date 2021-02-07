@@ -4,11 +4,16 @@
     --primario: #FFC107;
     --secundario: #0097A7;
     --gris: #757575;
+    --grisclaro: #DFE9F3;
 }
+
+
+/* Globales */
 
 html {
     font-size: 62.5%;
     box-sizing: border-box;
+    /* Hack para el box model */
 }
 
 *,
@@ -20,20 +25,69 @@ html {
 body {
     font-size: 16px;
     font-family: 'Krub', sans-serif;
-}
-
-.titulo {
-    text-align: center;
-    font-size: 3.8rem;
-}
-
-.titulo span {
-    font-size: 2rem;
+    background-image: linear-gradient(to top, var(--grisclaro) 0%, var(--blanco) 100%);
 }
 
 .contenedor {
     max-width: 120rem;
     margin: 0 auto;
+}
+
+.boton {
+    background-color: var(--secundario);
+    color: var(--blanco);
+    padding: 1rem 3rem;
+    margin-top: 1rem;
+    font-size: 3rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: .5rem;
+    width: 90%;
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    .boton {
+        width: auto;
+    }
+}
+
+.sombra {
+    -webkit-box-shadow: 0px 5px 15px 5px rgba(138, 138, 138, 0.87);
+    -moz-box-shadow: 0px 5px 15px 5px rgba(138, 138, 138, 0.87);
+    box-shadow: 0px 5px 15px 5px rgba(138, 138, 138, 0.87);
+    background-color: var(--blanco);
+    padding: 2rem;
+    border-radius: 1rem;
+}
+
+
+/* typografia */
+
+h1 {
+    font-size: 3.8rem;
+}
+
+h2 {
+    font-size: 2.8rem;
+}
+
+h3 {
+    font-size: 1.8rem;
+}
+
+h1,
+h2,
+h3 {
+    text-align: center;
+}
+
+
+/* titulos */
+
+.titulo span {
+    font-size: 2rem;
 }
 
 .nav-bg {
@@ -51,6 +105,9 @@ body {
         justify-content: space-between;
     }
 }
+
+
+/* Navegacion pricipal */
 
 .navegacion-principal a {
     display: block;
@@ -72,5 +129,27 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     height: 450px;
-    padding: 20px;
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.contenido-hero {
+    position: absolute;
+    background-color: rgb( 0 0 0 / 70%);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.contenido-hero h2,
+.contenido-hero p {
+    color: var(--blanco);
+}
+
+.contenido-hero .ubicacion {
+    display: flex;
+    align-items: flex-end;
 }
